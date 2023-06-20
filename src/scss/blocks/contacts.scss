@@ -1,0 +1,136 @@
+.contacts {
+  padding-top: 70px;
+  &__inner {
+    display: flex;
+    min-height: 500px;
+    background-color: #1e2023;
+    border-radius: 30px;
+  }
+  &__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: #27292d;
+    border-radius: 26px;
+    padding: 30px;
+  }
+  &__socials-decor {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #fff;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    span {
+      position: relative;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #fe6409;
+    }
+  }
+  &__socials-title {
+    color: #fff;
+    font-size: 26px;
+    font-family: 'druktextwidecyr',sans-serif;
+    line-height: 1.55;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__socials-text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__socials-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  &__socials-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: #fe6409;
+    border-radius: 20px;
+    transition: .3s;
+    cursor: pointer;
+    &:hover {
+      background-color: #fe4808;
+    }
+  }
+  &__socials-link {}
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 30px;
+  }
+  &__info-list {}
+  &__info-item {
+    padding-left: 80px;
+    position: relative;
+    font-size: 20px;
+    font-family: 'Inter',sans-serif;
+    line-height: 1.55;
+    color: #fff;
+    & + .contacts__info-item {
+      margin-top: 40px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: -9px;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background-color: #27292d;
+    }
+    &--email::before {
+      background-image: url('@img/icons/email.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    &--phone::before {
+      background-image: url('@img/icons/telephone.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    &--adress::before {
+      background-image: url('@img/icons/home.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &__info-link {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Inter',sans-serif;
+    line-height: 1.55;
+    transition: .3s;
+    .no-touch &:hover {
+      color: #fe6409;
+    }
+  }
+}
+

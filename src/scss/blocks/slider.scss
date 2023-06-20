@@ -1,0 +1,40 @@
+.slider {
+
+  .swiper-slide {
+    width: auto;
+  }
+
+  .swiper-wrapper {
+    align-items: center;
+  }
+
+}
+
+.slider__title {
+  margin-bottom: 40px;
+}
+
+.slider__body {
+  padding: 0 20px;
+
+  &:hover {
+    cursor: url('@img/icons/cursor.svg'), pointer;
+  }
+}
+
+.slider__body-img {
+  width: 500px;
+  height: 380px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.slider__body-img--big {
+  width: 380px;
+  height: 500px;
+}
+
+.slider__body-img--middle {
+  width: 380px;
+  height: 380px;
+}

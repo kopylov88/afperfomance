@@ -1,0 +1,14 @@
+.footer {
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px 0;
+  }
+  &__item {
+    span {
+      color: rgb(254, 100, 9);
+    }
+  }
+}
+

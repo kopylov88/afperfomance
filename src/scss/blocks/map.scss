@@ -1,0 +1,105 @@
+.map__title {
+  margin-bottom: 40px;
+}
+
+.map__img {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#17191c, .9);
+
+  }
+}
+
+.location {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #fe4808;
+  position: absolute;
+  z-index: 2;
+  bottom: 71px;
+  left: 509px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation-name: scale;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+}
+
+.dot1,
+.dot2,
+.dot3,
+.dot4 {
+  position: absolute;
+  z-index: 10;
+  top: 100px;
+  left: 350px;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background-color: #fff;
+  animation-name: scaleFade;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.dot2 {
+  top: 200px;
+  left: 600px;
+  animation-delay: .3s;
+}
+.dot3 {
+  top: 300px;
+  left: 900px;
+  animation-delay: .6s;
+}
+.dot4 {
+  top: 100px;
+  left: 900px;
+  animation-delay: 1.2s;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: 0 0;
+  }
+
+  50% {
+    transform: scale(1.3) translate(-50%, -50%);
+    transform-origin: 0 0;
+  }
+
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: 0 0;
+  }
+}
+
+@keyframes scaleFade {
+  0% {
+    transform: scale(1);
+    opacity: .2;
+  }
+
+  100% {
+    transform: scale(200);
+    opacity: 0;
+  }
+}
