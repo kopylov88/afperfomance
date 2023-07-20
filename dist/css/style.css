@@ -246,14 +246,6 @@ body.noscroll {
   transition: 0.3s;
 }
 
-.up-btn:hover {
-  background-color: #fe6409;
-}
-
-.up-btn:hover rect {
-  fill: transparent;
-}
-
 .up-btn.active {
   opacity: 1;
   visibility: visible;
@@ -1220,7 +1212,7 @@ body.noscroll {
   z-index: 200;
   padding: 10px;
   top: 10px;
-  right: 20px;
+  right: 10px;
   cursor: pointer;
 }
 
@@ -1673,7 +1665,7 @@ textarea:focus:-ms-input-placeholder {
     justify-content: start;
     max-width: none;
     min-height: auto;
-    padding: 5px 20px;
+    padding: 5px;
   }
 
   .hero__info-text {
@@ -1839,5 +1831,15 @@ textarea:focus:-ms-input-placeholder {
   .slider__body-img.slider__body-img--big,
   .slider__body-img.slider__body-img--middle {
     width: 100%;
+  }
+}
+
+@media (any-hover: hover) {
+  .up-btn:hover {
+    background-color: #fe6409;
+  }
+
+  .up-btn:hover rect {
+    fill: transparent;
   }
 }

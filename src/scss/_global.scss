@@ -8,6 +8,7 @@ body {
   font-size: 18px;
   color: #838383;
   background-color: #17191c;
+
   &.noscroll {
     overflow: hidden;
   }
@@ -101,13 +102,14 @@ body {
 }
 
 @media(min-width: 500px) {
+
   .swiper-horizontal>.swiper-pagination-bullets,
   .swiper-pagination-bullets {
     display: none;
   }
 }
 
-.up-btn{
+.up-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -119,21 +121,28 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: .3s;
+
   rect {
     fill: #27292d;
     transition: .3s;
   }
+
   cursor: pointer;
   z-index: 1;
   transition: 1s;
-  &:hover {
-    rect {
-      fill: transparent;
+
+  @media(any-hover: hover) {
+    &:hover {
+      rect {
+        fill: transparent;
+      }
+
+      background-color:#fe6409;
     }
-    background-color:#fe6409;
   }
 }
-.up-btn.active{
+
+.up-btn.active {
   opacity: 1;
   visibility: visible;
 }
