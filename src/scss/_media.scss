@@ -185,6 +185,12 @@
     }
   }
 
+  .info,
+  .buy,
+  .steps {
+    padding: 30px 0;
+  }
+
   .info__body-top {
     grid-template-columns: minmax(300px, 500px) 1fr;
     grid-template-rows: repeat(4, 130px);
@@ -261,6 +267,11 @@
     height: 10px;
   }
 
+  .location::after {
+    width: 60px;
+    height: 60px;
+  }
+
   .orders__item {
     flex-wrap: wrap;
   }
@@ -282,7 +293,7 @@
   }
 
   .custom-checkbox {
-    width: 75px;
+    width: 65px;
     height: 30px;
 
     &::before {
@@ -290,6 +301,11 @@
       height: 22px;
     }
   }
+
+  .order__input:checked+.custom-checkbox::before {
+    transform: translateX(33px);
+  }
+
   .orders__price {
     flex: 0 0 80%;
   }
