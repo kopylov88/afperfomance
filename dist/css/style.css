@@ -1253,9 +1253,11 @@ body.noscroll {
 
 .empty-cart {
   display: none;
-  color: #000;
   text-transform: uppercase;
   text-align: center;
+  font-family: druktextwidecyr;
+  color: #000;
+  font-size: 24px;
   margin-top: 75px;
 }
 
