@@ -44,8 +44,9 @@
   &__item-img--black {
     position: relative;
     z-index: 1;
+    transition: .5s;
     &.clicked {
-      display: none;
+      opacity: 0;
     }
   }
   &__item-img--color {

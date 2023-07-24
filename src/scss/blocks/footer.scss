@@ -9,6 +9,11 @@
     span {
       color: rgb(254, 100, 9);
     }
+    @media(any-hover: hover) {
+      a:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 

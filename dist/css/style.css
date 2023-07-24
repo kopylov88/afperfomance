@@ -2,6 +2,8 @@
 
 @import '../../node_modules/swiper/swiper-bundle.min.css';
 
+@import '../../node_modules/aos/dist/aos.css';
+
 * {
   padding: 0px;
   margin: 0px;
@@ -664,10 +666,11 @@ body.noscroll {
 .order__item-img--black {
   position: relative;
   z-index: 1;
+  transition: 0.5s;
 }
 
 .order__item-img--black.clicked {
-  display: none;
+  opacity: 0;
 }
 
 .order__item-img--color {
@@ -1196,8 +1199,9 @@ body.noscroll {
 .modal__body {
   position: relative;
   padding: 20px;
-  margin-top: auto;
+  margin: auto;
   max-width: 600px;
+  min-height: 200px;
   width: 100%;
   background-color: #fff;
   border-radius: 30px;
@@ -1227,16 +1231,36 @@ body.noscroll {
   visibility: visible;
 }
 
-.modal__title {
+.modal__btn {
+  max-width: 100%;
+  width: 100%;
+}
+
+.form {
+  display: none;
+}
+
+.form.active {
+  display: block;
+}
+
+.form__title {
   font-size: 24px;
   line-height: 1.35;
   color: #000;
   margin-bottom: 20px;
 }
 
-.modal__btn {
-  max-width: 100%;
-  width: 100%;
+.empty-cart {
+  display: none;
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 75px;
+}
+
+.empty-cart.active {
+  display: block;
 }
 
 .orders__item {
@@ -1856,5 +1880,9 @@ textarea:focus:-ms-input-placeholder {
 
   .up-btn:hover rect {
     fill: transparent;
+  }
+
+  .footer__item a:hover {
+    text-decoration: underline;
   }
 }

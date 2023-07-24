@@ -2,6 +2,7 @@ import * as myFunctions from "./modules/functions.js";
 import { useDynamicAdapt } from './modules/dynamicAdapt.js';
 import Swiper from 'swiper/bundle';
 import Inputmask from 'inputmask';
+import AOS from 'aos';
 
 myFunctions.isWebp();
 myFunctions.isTouch();
@@ -168,11 +169,14 @@ function summ() {
   })
   const totalPrice = document.querySelectorAll('.total-price');
   totalPrice.forEach(function (el) {
-    if (totalCost === 0) {
-      el.textContent = 'Ваша корзина пуста';
+    if (totalCost > 0) {
+      el.textContent = `Общая сумма заказа: ${totalCost} руб.`;
+      document.querySelector('.form').classList.add('active');
+      document.querySelector('.empty-cart').classList.remove('active');
     }
     else {
-      el.textContent = `Общая сумма заказа: ${totalCost} руб.`;
+      document.querySelector('.form').classList.remove('active');
+      document.querySelector('.empty-cart').classList.add('active');
     }
   })
 }
@@ -203,7 +207,6 @@ document.querySelector('.modal__body').addEventListener('click', function (event
     }
   }
 });
-
 
 //Добавление товаров в корзину
 
@@ -259,10 +262,13 @@ buyBtns.forEach(el => {
     else {
       cart.insertAdjacentHTML("afterbegin", cartItemHtml);
     }
+
     summ();
     cartCalc();
   })
 });
+
+//Удаление товаров из корзины
 
 document.querySelector('.modal__body').addEventListener('click', function (e) {
   if (e.target.closest('.orders__delete')) {
@@ -276,6 +282,39 @@ document.querySelector('.modal__body').addEventListener('click', function (e) {
   }
 })
 
+AOS.init({
+  disable: "mobile",
+});
+
+//Плавный скролл сайта
+
+SmoothScroll({
+  // Время скролла 400 = 0.4 секунды
+  animationTime: 800,
+  // Размер шага в пикселях 
+  stepSize: 50,
+
+  // Дополнительные настройки:
+
+  // Ускорение 
+  accelerationDelta: 30,
+  // Максимальное ускорение
+  accelerationMax: 2,
+
+  // Поддержка клавиатуры
+  keyboardSupport: true,
+  // Шаг скролла стрелками на клавиатуре в пикселях
+  arrowScroll: 50,
+
+  // Pulse (less tweakable)
+  // ratio of "tail" to "acceleration"
+  pulseAlgorithm: true,
+  pulseScale: 4,
+  pulseNormalize: 1,
+
+  // Поддержка тачпада
+  touchpadSupport: true,
+})
 
 
 
