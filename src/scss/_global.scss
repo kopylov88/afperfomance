@@ -95,17 +95,19 @@ body {
   display: none;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets {
-  top: auto;
-  bottom: 35px;
+  top: auto !important;
+  bottom: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fe4808;
 }
 
 @media(min-width: 500px) {
 
-  .swiper-horizontal>.swiper-pagination-bullets,
   .swiper-pagination-bullets {
-    display: none;
+    display: none !important;
   }
 }
 
