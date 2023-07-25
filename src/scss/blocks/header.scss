@@ -7,6 +7,13 @@
 }
 
 .header._scroll {
+  @media(min-width: 980px) {
+    .header__inner {
+      padding: 0;
+      min-height: 80px;
+    }
+  }
+
   .header__wrapper {
     background-color: rgba(#fff, .9);
 
@@ -14,13 +21,6 @@
       &:hover {
         background-color: rgba(#fff, 1);
       }
-    }
-  }
-
-  @media(min-width: 980px) {
-    .header__inner {
-      padding: 0;
-      min-height: 80px;
     }
   }
 }
