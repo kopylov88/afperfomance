@@ -40,6 +40,10 @@
 }
 
 @media (max-width: 980px) {
+  .header {
+    min-height: 60px;
+  }
+
   .header__inner {
     min-height: auto;
     padding: 0;

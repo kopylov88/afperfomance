@@ -10,14 +10,18 @@
   .header__wrapper {
     background-color: rgba(#fff, .9);
 
-    &:hover {
-      background-color: rgba(#fff, 1);
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: rgba(#fff, 1);
+      }
     }
   }
 
-  .header__inner {
-    padding: 0;
-    min-height: 80px;
+  @media(min-width: 980px) {
+    .header__inner {
+      padding: 0;
+      min-height: 80px;
+    }
   }
 }
 
