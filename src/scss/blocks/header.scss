@@ -12,14 +12,14 @@
       padding: 0;
       min-height: 80px;
     }
-  }
 
-  .header__wrapper {
-    background-color: rgba(#fff, .9);
+    .header__wrapper {
+      background-color: rgba(#fff, .9);
 
-    @media (any-hover: hover) {
-      &:hover {
-        background-color: rgba(#fff, 1);
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: rgba(#fff, 1);
+        }
       }
     }
   }

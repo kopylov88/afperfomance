@@ -280,10 +280,6 @@ body.noscroll {
   min-height: 100px;
 }
 
-.header._scroll .header__wrapper {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
 .header__wrapper {
   position: fixed;
   top: 0;
@@ -1547,6 +1543,16 @@ textarea:focus:-ms-input-placeholder {
     padding: 0;
     min-height: 80px;
   }
+
+  .header._scroll .header__wrapper {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+@media (min-width: 980px) and (any-hover: hover) {
+  .header._scroll .header__wrapper:hover {
+    background-color: white;
+  }
 }
 
 @media (max-width: 1240px) {
@@ -1910,10 +1916,6 @@ textarea:focus:-ms-input-placeholder {
 
   .up-btn:hover rect {
     fill: transparent;
-  }
-
-  .header._scroll .header__wrapper:hover {
-    background-color: white;
   }
 
   .footer__item a:hover {
