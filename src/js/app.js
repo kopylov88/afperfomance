@@ -316,6 +316,21 @@ SmoothScroll({
   touchpadSupport: true,
 })
 
+//Анимация хедера при скролле
+
+const header = document.querySelector('.header');
+const callback = (entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      header.classList.remove('_scroll');
+    }
+    else {
+      header.classList.add('_scroll');
+    }
+  })
+}
+const headerObserver = new IntersectionObserver(callback);
+headerObserver.observe(header);
 
 
 
