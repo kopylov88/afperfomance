@@ -1393,16 +1393,20 @@ body.noscroll {
   margin-bottom: 30px;
 }
 
+.connect__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.connect__item .just-validate-error-label {
+  margin-top: 10px;
+}
+
 .connect__input {
   width: 100%;
   height: 56px;
   padding: 10px 20px;
   background-color: #f6f6f6;
   border-radius: 14px;
-}
-
-.connect__input + .connect__input {
-  margin-top: 20px;
 }
 
 .select-conect__title {

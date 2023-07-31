@@ -2,6 +2,7 @@ import * as myFunctions from "./modules/functions.js";
 import { useDynamicAdapt } from './modules/dynamicAdapt.js';
 import Swiper from 'swiper/bundle';
 import Inputmask from 'inputmask';
+import JustValidate from 'just-validate';
 import AOS from 'aos';
 
 myFunctions.isWebp();
@@ -122,22 +123,22 @@ const popupBody = document.querySelector('.modal__body');
 function popupToggle() {
   popup.classList.toggle('active');
   popupBody.classList.toggle('active');
+  body.classList.toggle('noscroll');
 }
 function popupClose() {
   popup.classList.remove('active');
   popupBody.classList.remove('active');
+  body.classList.remove('noscroll')
 }
 
 openPopup.forEach(function (el) {
   el.addEventListener('click', function () {
     popupToggle();
-    body.classList.add('noscroll');
   });
 });
 
 closePopup.addEventListener('click', function () {
   popupClose();
-  body.classList.remove('noscroll')
 });
 
 popupWrap.addEventListener('click', function () {
@@ -331,6 +332,46 @@ const callback = (entries) => {
 }
 const headerObserver = new IntersectionObserver(callback);
 headerObserver.observe(header);
+
+//Валидатор формы
+const validator = new JustValidate('.form');
+validator
+  .addField('[name = userName]', [
+    {
+      rule: 'required',
+      errorMessage: 'Заполните поле',
+    },
+  ])
+  .addField('[name = userPhone]', [
+    {
+      rule: 'required',
+      errorMessage: 'Заполните поле',
+    },
+    {
+      rule: 'function',
+      validator: function () {
+        const phone = document.querySelector('[name = userPhone]').inputmask.unmaskedvalue();
+        return phone.length === 7;
+      },
+      errorMessage: 'Введите корректный номер телефона',
+    },
+  ])
+  .addField('[name = telegram]', [
+    {
+      rule: 'required',
+      errorMessage: 'Заполните поле',
+    }
+  ])
+  .onSuccess(e => {
+    e.target.reset();
+    popupToggle();
+    body.classList.remove('noscroll');
+    document.querySelectorAll('.orders__item').forEach(el=>{
+      el.remove();
+      summ();
+      cartCalc();
+    })
+  })
 
 
 
