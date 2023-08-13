@@ -75,11 +75,6 @@
 
   &__link {
     max-width: 100%;
-    background-image: linear-gradient(87deg, rgba(254, 132, 10, 1) 0%, rgba(254, 72, 8, 1) 100%);
-
-    .no-touch &:hover {
-      background-image: linear-gradient(87deg, rgba(240, 122, 5, 1) 0%, rgba(237, 67, 5, 1) 100%);
-    }
   }
 }
 

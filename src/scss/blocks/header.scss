@@ -52,6 +52,13 @@
   gap: 10px;
 }
 
+.header__btn {
+  border: 1px solid transparent;
+  &:hover {
+    border: 1px solid #fe6409;
+  }
+}
+
 .menu {
   transition: .3s;
 
@@ -61,11 +68,31 @@
   }
 
   &__list-link {
+    position: relative;
     color: #151515;
     transition: .3s;
 
-    .no-touch &:hover {
-      color: #fe6409;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fe6409;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .3s;
+    }
+
+    @media(any-hover: hover) {
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+      &:hover {
+        color: #fe6409;
+      }
     }
   }
 

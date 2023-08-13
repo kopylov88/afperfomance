@@ -67,14 +67,15 @@
     width: 70px;
     height: 70px;
     background-color: #fe6409;
+    border: 1px solid transparent;
     border-radius: 20px;
     transition: .3s;
     cursor: pointer;
     &:hover {
       background-color: #fe4808;
+      border: 1px solid #fff;
     }
   }
-  &__socials-link {}
   &__info {
     display: flex;
     justify-content: center;
@@ -82,7 +83,6 @@
     width: 50%;
     padding: 30px;
   }
-  &__info-list {}
   &__info-item {
     padding-left: 80px;
     position: relative;
