@@ -334,6 +334,7 @@ const headerObserver = new IntersectionObserver(callback);
 headerObserver.observe(header);
 
 //Валидатор формы
+
 const validator = new JustValidate('.form');
 validator
   .addField('[name = userName]', [
