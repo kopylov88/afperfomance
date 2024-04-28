@@ -1738,6 +1738,18 @@ textarea:focus:-ms-input-placeholder {
 }
 
 @media (max-width: 767px) {
+  .info {
+    scroll-margin-top: 40px;
+  }
+
+  .buy {
+    scroll-margin-top: 40px;
+  }
+
+  .steps {
+    scroll-margin-top: 40px;
+  }
+
   .title {
     font-size: 24px;
   }

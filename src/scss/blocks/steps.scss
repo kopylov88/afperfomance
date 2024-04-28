@@ -1,6 +1,10 @@
 .steps {
   padding: 140px 0;
 
+  @media(max-width: 767px) {
+    scroll-margin-top: 40px;
+  }
+
   &__title {
     margin-bottom: 40px;
   }
@@ -37,7 +41,7 @@
   &__item-title {
     color: #fff;
     font-size: 20px;
-    font-family: 'druktextwidecyr',sans-serif;
+    font-family: 'druktextwidecyr', sans-serif;
     line-height: 1.55;
     text-transform: uppercase;
     margin-bottom: 10px;

@@ -1,6 +1,10 @@
 .buy {
   padding: 140px 0;
 
+  @media(max-width: 767px) {
+    scroll-margin-top: 40px;
+  }
+
   &__title {
     margin-bottom: 40px;
   }
